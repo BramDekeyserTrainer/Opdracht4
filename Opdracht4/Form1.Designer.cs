@@ -37,7 +37,7 @@
             this.btnTaakToevoegen = new System.Windows.Forms.Button();
             this.btnTaakAfgewerkt = new System.Windows.Forms.Button();
             this.btnAchteraan = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbTekstVeld = new System.Windows.Forms.TextBox();
             this.dtpckTijd = new System.Windows.Forms.DateTimePicker();
             this.btnMessageBox = new System.Windows.Forms.Button();
             this.btnTekstveld = new System.Windows.Forms.Button();
@@ -127,14 +127,14 @@
             this.btnAchteraan.UseVisualStyleBackColor = true;
             this.btnAchteraan.Click += new System.EventHandler(this.btnAchteraan_Click);
             // 
-            // textBox1
+            // tbTekstVeld
             // 
-            this.textBox1.Location = new System.Drawing.Point(45, 223);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(657, 205);
-            this.textBox1.TabIndex = 10;
+            this.tbTekstVeld.Location = new System.Drawing.Point(45, 223);
+            this.tbTekstVeld.Multiline = true;
+            this.tbTekstVeld.Name = "tbTekstVeld";
+            this.tbTekstVeld.ReadOnly = true;
+            this.tbTekstVeld.Size = new System.Drawing.Size(657, 205);
+            this.tbTekstVeld.TabIndex = 10;
             // 
             // dtpckTijd
             // 
@@ -191,7 +191,7 @@
             this.Controls.Add(this.btnTekstveld);
             this.Controls.Add(this.btnMessageBox);
             this.Controls.Add(this.dtpckTijd);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbTekstVeld);
             this.Controls.Add(this.btnAchteraan);
             this.Controls.Add(this.btnTaakAfgewerkt);
             this.Controls.Add(this.btnTaakToevoegen);
@@ -219,7 +219,7 @@
         private Button btnTaakToevoegen;
         private Button btnTaakAfgewerkt;
         private Button btnAchteraan;
-        private TextBox textBox1;
+        private TextBox tbTekstVeld;
         private DateTimePicker dtpckTijd;
         private Button btnMessageBox;
         private Button btnTekstveld;

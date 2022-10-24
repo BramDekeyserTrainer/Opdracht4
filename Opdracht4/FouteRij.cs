@@ -16,17 +16,33 @@ namespace Opdracht4
         internal T Huidig;
 
         /*Deze boolean kan ik later mee nagan of iets leeg is.
-         (Indien nodig.)*/
-        public bool IsLeeg;
+         By default is deze leeg. (Dus true)*/
+        public readonly bool IsLeeg = true;
+
+        /*Ik maak de integer 'Count' aan.
+         Deze geef ik vervolgens ook een getter.
+         Doormiddel van deze getter return ik Count.*/
         public int Count = -1;
+
+        /*Ik maak het generische publieke HuidigElement aan.
+         Ik heb geprobeerd deze readonly te maken,
+        maar kreeg de melding dat er hier geen readonly gebruikt kan worden.
+        Omwille van die reden, heb ik de readonly in commentaar gezet.
+        Ik heb HuidigElement ook meteen haar getter gegeven die 'Huidig' returnd.*/
+        public /*readonly*/ T HuidigElement
+        {
+            get { return this.Huidig; }
+        }
 
         public T Toevoegen(T iets)
         {
             container.Add(iets);
 
-            /*Als de container leeg is, wordt Huidig gereturnd.*/
+            /*Als de container leeg is, wordt Huidig gereturnd.
+             In dit geval stel ik 'Huidig' gelijk aan 'iets'.*/
             if (container.Count() == 0)
             {
+                Huidig = iets;
                 return Huidig;
             }
 
@@ -103,14 +119,22 @@ namespace Opdracht4
         }
 
         /*Ik maak een publieke methode aan.
-         Deze maakt een shallow kopij aan van de rij.
+         Deze maakt een kopij aan van de rij.
         Een shallow kopij, wordt er een kopij van het oorspronkelijke object opgeslagen,
         en enkel een referentie-adres uiteindelijk gekopieerd.
         Bij een deep kopij daarentegen, wordt zowel het oorspronkelijke object als
-        de repititieve kopijen opgeslagen.*/
-        public object Shallowcopy()
+        de repititieve kopijen opgeslagen.
+        In dit geval maken we een nieuwe lijst aan die kopieert. 
+        Dit is een gewone kopie.*/
+        public List<T> Kopieer()
         {
-            return (FouteRij<T>)this.MemberwiseClone();
+            List<T> fouterij = new List<T>();
+
+            /*'fouterij' is gelijk aan de return waarde van de functie Kopieer().*/
+            fouterij = Kopieer();
+
+            /*Ik return de kopie.*/
+            return fouterij;
         }
 
 
